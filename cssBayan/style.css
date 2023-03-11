@@ -64,6 +64,7 @@ html {
 body {
     font-family: "Inter", sans-serif;
     background-color: rgba(242, 248, 213, 0.993);
+    height: 100%;
 }
 
 header {
@@ -79,16 +80,8 @@ main {
     margin: 0 auto;
 }
 
-
-/* .border {
-    max-width: 100%;
-    height: 0.1rem;
-    background-color: rgb(204, 203, 203);
-    margin: 3rem 0;
-} */
-
 .section-accordion {
-    border-top: 1px solid  rgb(204, 203, 203);
+    border-top: 1px solid rgb(204, 203, 203);
     padding-top: 2rem;
 }
 
@@ -106,20 +99,33 @@ input[type='radio'] {
     display: none;
 }
 
-.pointer {
-    max-width: 3rem;
-    transform: none;
+.pointer-container {
+    max-width: 0.5rem;
 }
 
-#meme-one:checked ~ .one-icon, 
-#meme-two:checked ~ .second-icon,
-#meme-three:checked ~ .third-icon,
-#meme-four:checked ~ .fourth-icon,
-#meme-five:checked ~ .fifth-icon {
+.accordion-container:hover .pointer-container {
+    display: none;
+}
+
+.pointer {
+    max-width: 3rem;
+    display: none;
+}
+
+.accordion-container:hover .pointer {
+    display: block;
+}
+
+#meme-one:checked~.one-icon,
+#meme-two:checked~.second-icon,
+#meme-three:checked~.third-icon,
+#meme-four:checked~.fourth-icon,
+#meme-five:checked~.fifth-icon {
     transform: rotate(180deg);
     transition: 0.5s;
-    display: inline-block;
+    /* display: inline-block; */
 }
+
 
 .meme-image {
     width: 100%;
@@ -130,7 +136,7 @@ input[type='radio'] {
     transition: max-height 0.5s;
 }
 
-input[type="radio"]:checked ~ .meme-image {
+input[type="radio"]:checked~.meme-image {
     max-height: 100%;
     margin: 4rem 0;
 }
