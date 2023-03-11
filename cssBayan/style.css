@@ -1,6 +1,6 @@
-* {
+/* * {
     margin: 0;
-}
+} */
 
 html,
 body {
@@ -64,15 +64,43 @@ html {
 body {
     font-family: "Inter", sans-serif;
     background-color: rgba(242, 248, 213, 0.993);
-    height: 100%;
+    color: #363636;
 }
 
 header {
     max-width: 50%;
     margin: 0 auto;
-    margin-top: 3rem;
+    margin-top: 0.25rem;
+}
+
+@media (max-width: 106rem) {
+    header {
+        max-width: 70%;
+    }
+}
+
+
+@media (max-width: 50rem) {
+    header {
+        max-width: 95%;
+    }
+}
+
+h1 {
     font-weight: 700;
-    font-size: 3rem;
+    font-size: 2.45rem;
+}
+
+@media (max-width: 106rem) {
+    h1 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 50rem) {
+    h1 {
+        font-size: 1.75rem;
+    }
 }
 
 main {
@@ -80,95 +108,127 @@ main {
     margin: 0 auto;
 }
 
+@media (max-width: 106rem) {
+    main {
+        max-width: 70%;
+    }
+}
+
+@media (max-width: 50rem) {
+    main {
+        max-width: 95%;
+    }
+}
+
 .section-accordion {
     border-top: 1px solid rgb(204, 203, 203);
-    padding-top: 2rem;
+    padding: 1.55rem 0;
+    cursor: pointer;
+
 }
 
 
 label {
     font-weight: 700;
-    font-size: 3rem;
+    font-size: 1.4rem;
+    line-height: 1.8rem;
     cursor: pointer;
-
-    display: grid;
-    grid-template-columns: 12fr 1fr;
+    transition: 0.5s;
 }
+
+@media (max-width: 106rem) {
+    label {
+        font-size: 1.25rem;
+        line-height: 1.6rem;
+    }
+}
+
+@media (max-width: 50rem){
+    label {
+        font-size: 1rem;
+        line-height: 1rem;
+    }
+}
+
 
 input[type='radio'] {
     display: none;
 }
 
-.pointer-container {
-    max-width: 0.5rem;
-}
-
-.accordion-container:hover .pointer-container {
-    display: none;
-}
-
 .pointer {
-    max-width: 3rem;
-    display: none;
+    max-width: 0;
 }
 
 .accordion-container:hover .pointer {
-    display: block;
+    transition: 0.5s;
+    justify-self: end;
+    max-width: 3rem;
 }
 
-#meme-one:checked~.one-icon,
-#meme-two:checked~.second-icon,
-#meme-three:checked~.third-icon,
-#meme-four:checked~.fourth-icon,
-#meme-five:checked~.fifth-icon {
+span {
+    width: 100%;
+}
+
+.header-pointer {
+    color: rgb(0 189 72);
+    display: flex;
+}
+
+#meme-one:checked~.header-pointer .pointer-container .one-icon,
+#meme-two:checked~.header-pointer .pointer-container .second-icon,
+#meme-three:checked~.header-pointer .pointer-container .third-icon,
+#meme-four:checked~.header-pointer .pointer-container .fourth-icon,
+#meme-five:checked~.header-pointer .pointer-container .fifth-icon {
     transform: rotate(180deg);
     transition: 0.5s;
-    /* display: inline-block; */
 }
-
 
 .meme-image {
     width: 100%;
     max-height: 0;
     display: flex;
     justify-content: center;
-    overflow: hidden;
-    transition: max-height 0.5s;
 }
 
 input[type="radio"]:checked~.meme-image {
     max-height: 100%;
+    transition: max-height 0.5s;
+    margin: 2rem 0;
+}
+
+input[type="radio"]:checked~.header-pointer {
+    color: #363636;
+}
+
+.section-accordion:hover .meme-image {
+    max-height: 100%;
+    transition: 1s;
     margin: 4rem 0;
 }
 
+.section-accordion:hover .pointer {
+    transform: rotate(180deg);
+    transition: 0.5s;
+}
+
+.accordion-container:hover span {
+    color: #363636;
+    transition: 0.5s;
+}
+
 img {
-    width: 55%;
+    width: 45%;
 }
 
-footer {
-    max-width: 50%;
-    margin: 0 auto;
-    margin-top: 5rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: end;
+@media (max-width: 106rem) {
+    img {
+        width: 60%;
+    }
 }
 
-footer>a {
-    margin-bottom: 1rem;
+@media (max-width: 106rem) {
+    img {
+        width: 70%;
+    }
 }
 
-footer>span {
-    font-size: 2rem;
-}
-
-.svg-git-hub {
-    max-width: 10rem;
-    cursor: pointer;
-}
-
-.rs-scool {
-    display: flex;
-    justify-content: end;
-    cursor: pointer;
-}
