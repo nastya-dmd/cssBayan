@@ -1,6 +1,6 @@
-/* * {
+* {
     margin: 0;
-} */
+}
 
 html,
 body {
@@ -73,16 +73,15 @@ header {
     margin-top: 0.25rem;
 }
 
-@media (max-width: 106rem) {
+@media (max-width: 1918px) {
     header {
         max-width: 70%;
     }
 }
 
-
-@media (max-width: 50rem) {
+@media (max-width: 800px) {
     header {
-        max-width: 95%;
+        max-width: 90%;
     }
 }
 
@@ -91,13 +90,13 @@ h1 {
     font-size: 2.45rem;
 }
 
-@media (max-width: 106rem) {
+@media (max-width: 1918px) {
     h1 {
         font-size: 2rem;
     }
 }
 
-@media (max-width: 50rem) {
+@media (max-width: 800px) {
     h1 {
         font-size: 1.75rem;
     }
@@ -108,15 +107,15 @@ main {
     margin: 0 auto;
 }
 
-@media (max-width: 106rem) {
+@media (max-width: 1918px) {
     main {
         max-width: 70%;
     }
 }
 
-@media (max-width: 50rem) {
+@media (max-width: 800px) {
     main {
-        max-width: 95%;
+        max-width: 90%;
     }
 }
 
@@ -124,49 +123,49 @@ main {
     border-top: 1px solid rgb(204, 203, 203);
     padding: 1.55rem 0;
     cursor: pointer;
-
+    transition: 0.5s;
 }
 
+.section-accordion:active {
+    transform: scale(1.1);
+}
 
 label {
     font-weight: 700;
-    font-size: 1.4rem;
+    font-size: 1.35rem;
     line-height: 1.8rem;
     cursor: pointer;
     transition: 0.5s;
 }
 
-@media (max-width: 106rem) {
+@media (max-width: 1918px) {
     label {
         font-size: 1.25rem;
         line-height: 1.6rem;
     }
 }
 
-@media (max-width: 50rem){
+@media (max-width: 800px) {
     label {
         font-size: 1rem;
         line-height: 1rem;
     }
 }
 
-
 input[type='radio'] {
     display: none;
 }
 
 .pointer {
-    max-width: 0;
-}
-
-.accordion-container:hover .pointer {
-    transition: 0.5s;
-    justify-self: end;
-    max-width: 3rem;
+    width: 0;
 }
 
 span {
     width: 100%;
+}
+
+.pointer-container {
+    display: flex;
 }
 
 .header-pointer {
@@ -188,11 +187,12 @@ span {
     max-height: 0;
     display: flex;
     justify-content: center;
+    transition: 0.3s;
 }
 
 input[type="radio"]:checked~.meme-image {
     max-height: 100%;
-    transition: max-height 0.5s;
+    transition: 0.5s;
     margin: 2rem 0;
 }
 
@@ -200,35 +200,64 @@ input[type="radio"]:checked~.header-pointer {
     color: #363636;
 }
 
-.section-accordion:hover .meme-image {
-    max-height: 100%;
-    transition: 1s;
-    margin: 4rem 0;
+@media (min-width:1182px) and (max-width:2000px) {
+    .accordion-container:hover .pointer {
+        transition: 0.5s;
+        justify-self: end;
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .section-accordion:hover .meme-image {
+        max-height: 100%;
+        margin: 4rem 0;
+    }
+
+    .section-accordion:hover .pointer {
+        transform: rotate(180deg);
+        transition: 0.5s;
+    }
+
+    .accordion-container:hover span {
+        color: #363636;
+        transition: 0.5s;
+    }
 }
 
-.section-accordion:hover .pointer {
-    transform: rotate(180deg);
+@media (min-width:280px) and (max-width:1182px) {
+    .accordion-container .pointer {
+        transition: 0.5s;
+        justify-self: end;
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+}
+
+.meme {
+    width: 40%;
     transition: 0.5s;
 }
 
-.accordion-container:hover span {
-    color: #363636;
-    transition: 0.5s;
+.meme:active {
+    box-shadow: 0 0 1rem rgba(78, 223, 5, 0.63);
 }
 
-img {
-    width: 45%;
+input[type="radio"]:checked~.meme-image .meme {
+    box-shadow: 0 0 1rem rgb(44 46 43 / 63%);
 }
 
-@media (max-width: 106rem) {
-    img {
+.meme:hover {
+    transform: scale(1.1);
+}
+
+@media (max-width: 1918px) {
+    .meme {
         width: 60%;
     }
 }
 
-@media (max-width: 106rem) {
-    img {
-        width: 70%;
+@media (max-width: 800px) {
+    .meme {
+        width: 80%;
     }
 }
-
