@@ -187,13 +187,15 @@ span {
     max-height: 0;
     display: flex;
     justify-content: center;
-    transition: 0.3s;
+    transition: 0.5s;
+    opacity: 0;
 }
 
 input[type="radio"]:checked~.meme-image {
     max-height: 100%;
     transition: 0.5s;
     margin: 2rem 0;
+    opacity: 1;
 }
 
 input[type="radio"]:checked~.header-pointer {
@@ -211,6 +213,7 @@ input[type="radio"]:checked~.header-pointer {
     .section-accordion:hover .meme-image {
         max-height: 100%;
         margin: 4rem 0;
+        opacity: 1;
     }
 
     .section-accordion:hover .pointer {
